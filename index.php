@@ -1,113 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-      <title>Tarea - Gerador Cartão de Aniversári</title>
-      <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Tarea - Gerador</title>
 
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="css/style.css" />
-      <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
-
   <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>1. Instruções</h2>
-        Preencha as informações abaixo e verifique o modelo e conteúdo ao lado na aba "Preview". <br/><br/> 
-        Feito isso, para finalizar basta clicar em "Finalizar" e depois em "Fazer Download".
-        <br/><br/>
 
-        <label>Modelos</label>
-        <select id="combo">
-          <option value="modelo1">Modelo Institucional</option>
-          <option value="modelo2">Modelo em Cor</option>
-        </select>
-
-        <br/><br/>
-
-        <label>Nome</label>
-        <input id="nomeValue" type="text" value="" placeholder="Digite o Nome Aqui" />
-
-        <br/><br/>
-
-        <label>Texto</label>
-        <textarea id="textoValue">digite o texto aqui</textarea>
-
-        <br/><br/>
-
-        <div class="btn-download">
-          <a id="generatorImg"><i class="fa fa-check-square-o" aria-hidden="true"></i> Clique aqui para finalizar</a> 
-          <a id="downloadImg" href="" style="display:none;" download><i class="fa fa-download" aria-hidden="true"></i> Fazer Download</a>
-        </div>
-
-    </div>
-
-    <!-- Preview -->
-    <div class="content">
-      <h2>Preview</h2>
-      <div class="wrapper">
-        <div id="content-export" class="modelo1">
-          <div id="nomePrint"></div>
-          <div id="textoPrint"></div>
-          <img crossOrigin="Anonymous" src="img/logo.png" />
-        </div>
-      </div>
-    </div>
-
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/html2canvas.js"></script>
+    <header>
       
-    <script>
-      $(function(){
-          // Gerador Imagem
-          $("#generatorImg").click(function(){
-            html2canvas($("#content-export"), {
-              onrendered: function(canvas) {
-                var imgsrc = canvas.toDataURL("image/png");
-                console.log(imgsrc);
-                $("#downloadImg").attr('href',imgsrc);
-                $("#generatorImg").hide();
-                $("#downloadImg").show();
-                $('#downloadImg').click(function() {
-                    location.reload();
-                });
-              }
-            });
-          }); 
-        }); 
+    </header>
 
+    <div class="container">
 
-        // Modelo 
-          $('#combo').change(function() {
-            if ($(this).val() == 'modelo1') {
-              $("#content-export").addClass("modelo1");
-              $("#content-export").removeClass("modelo2");
-            }
-            
-            if ($(this).val() == 'modelo2') {
-              $("#content-export").addClass("modelo2");
-              $("#content-export").removeClass("modelo1");
-            }
-          
-          });
+      <div class="row">
+        
+        <div class="col-md-3">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
 
-        // Change Campos
-        var nome = document.getElementById('nomeValue');
+        <div class="col-md-9 text-right">
+          <h3>Gerador de Informativos</h3>
+        </div>
 
-        nome.onkeyup = function() {
-          document.getElementById('nomePrint').innerHTML = nome.value;
-        }
+        <div class="col-md-12">
+          <hr>
+        </div>
 
-        // Change Texto
-        var texto = document.getElementById('textoValue');
+      </div>
 
-        texto.onkeyup = function() {
-          document.getElementById('textoPrint').innerHTML = texto.value;
-        }
+      <div class="row">
 
-      </script>
+        <div class="col-md-4 col-md-offset-2">
+          <div>
+            <a href="novoColaborador.php">
+              <img src="img/icoPcd.png" alt="Ico" />
+              <h5>
+                Novo colaborador
+              </h5>
+            </a>
+          </div>
+        </div>
 
-   </body>
+        <div class="col-md-4">
+          <div>
+            <a href="aniversariante.php">
+              <img src="img/icoSingle.png" alt="Ico" />
+              <h5>
+                Aniversariantes
+              </h5>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer></footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>

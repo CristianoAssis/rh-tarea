@@ -50,7 +50,7 @@ h2 {
 }
 
 
-/*=== Template ===*/
+/* === Template === */
 
 /* Sidebar */
 .sidebar {
@@ -86,13 +86,19 @@ h2 {
 }
 
 .sidebar .btn-download a {
-	background: #595a5d; 
+	background: #F7BA44; 
     padding: 10px 25px;
     color: white;
     margin: 10px 0 0 0;
     display: inline-block;
     width: 252px;
     text-align: center;
+}
+
+.sidebar .btn-download a.back {
+	background: transparent;
+	border: solid 1px #595A5C;
+	color: #595A5C; 
 }
 
 .sidebar .btn-download a i.fa {
@@ -167,3 +173,67 @@ h2 {
     padding-top: 90px;
 }
 
+
+/* === Modelo Colaborador === */
+
+body.colaborador .content #content-export {
+	width: 680px;
+}
+
+body.colaborador .content #content-export h2 {
+	font-size: 26px;
+	color: #FEBA11;
+	letter-spacing: 0.29px;
+	margin-top: 0px;
+}
+
+body.colaborador .content #content-export p {
+	font-size: 15px;
+	color: #595A5C;
+	letter-spacing: 0.17px;
+	line-height: 21px;
+	margin-top: 4px;
+}
+
+body.colaborador .content #content-export h3 {
+	font-size: 17px;
+	color: #7A7A7A!important;
+	letter-spacing: 0.24px;
+	margin: 8px 0 0 0;
+	padding-top: 17px!important;
+	font-weight: 600;
+}
+
+body.colaborador .content #content-export h4 {
+	font-style: italic;
+	font-size: 14px;
+	color: #7A7A7A;
+	letter-spacing: 0.21px;
+}
+
+body.colaborador .wrapper {
+	text-align: left;
+}
+
+body.colaborador #fotoColaborador {
+	width:175px;
+	height:221px;
+	float: left;
+	margin: 0 40px 0 0;
+}
+
+.contentColaborador {
+	float: left;
+	width: 460px;
+}
+
+body.colaborador img.icoTarea {
+	position: absolute;
+	margin-left: 142px;
+	margin-top: 185px;
+}
+
+body.colaborador .content #content-export img.logoTarea {
+	width: 142px;
+	margin:101px 0 10px 252px;
+}

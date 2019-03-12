@@ -178,6 +178,8 @@ h2 {
 
 body.colaborador .content #content-export {
 	width: 680px;
+	background: white;
+	height: auto!important;
 }
 
 body.colaborador .content #content-export h2 {
